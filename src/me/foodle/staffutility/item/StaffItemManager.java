@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 public class StaffItemManager implements Listener{
 
-    private HashMap<String,StaffItem> staffItems = new HashMap<>();
+    private static HashMap<String,StaffItem> staffItems = new HashMap<>();
     private StaffUtility staffPlugin;
 
     public StaffItemManager(StaffUtility staffPlugin){
@@ -24,11 +24,11 @@ public class StaffItemManager implements Listener{
     }
 
 
-    public void addStaffItem(String identifier,StaffItem item){
+    public static void addStaffItem(String identifier,StaffItem item){
         staffItems.put(identifier,item);
     }
 
-    public void deactivateStaffItem(String identifier){
+    public static void deactivateStaffItem(String identifier){
         staffItems.remove(identifier);
     }
 

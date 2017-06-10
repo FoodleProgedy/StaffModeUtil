@@ -1,8 +1,11 @@
 package me.foodle.staffutility;
 
+import lombok.Getter;
+import me.foodle.staffutility.example.RandomTeleport;
 import me.foodle.staffutility.item.StaffItemManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@Getter
 public class StaffUtility {
 
     private StaffItemManager staffItemManager;
@@ -16,6 +19,7 @@ public class StaffUtility {
     public void enable() {
 
         staffItemManager = new StaffItemManager(this);
+       StaffItemManager.addStaffItem("randomteleport", new RandomTeleport());
         plugin.getServer().getPluginManager().registerEvents(staffItemManager,plugin);
 
     }
